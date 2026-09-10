@@ -1,0 +1,22 @@
+# Salin file ini menjadi terraform.tfvars lalu isi nilainya.
+# JANGAN commit terraform.tfvars (berisi info sensitif).
+
+tenancy_ocid      = "ocid1.tenancy.oc1..xxxx"
+user_ocid         = "ocid1.user.oc1..xxxx"
+fingerprint       = "aa:bb:cc:dd:...:ff"
+private_key_path  = "~/.oci/oci_api_key.pem"
+region            = "ap-singapore-1"
+compartment_ocid  = ""                                  # kosong = root tenancy
+ssh_public_key_path = "~/.ssh/oci_farm.pub"
+# ssh_public_key  = "ssh-ed25519 AAAA... (alternatif inline)"
+
+my_public_ip_cidr = "203.0.113.5/32"                    # WAJIB: IP kamu saat ini
+alarm_email       = "kamu@example.com"                  # WAJIB
+
+# optional
+# availability_domain = "DLD-1"
+# instance_name       = "a1-farm-sg"
+# ocpus               = 2
+# memory_in_gbs       = 12
+# boot_volume_size_in_gbs = 100
+# image_ocid          = ""

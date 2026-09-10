@@ -6,16 +6,23 @@ Runbook lengkap untuk mendapatkan VPS OCI Free Tier. Kerjakan fase **A1 → A2 d
 
 ## Fase A1 — Signup akun (manual, browser)
 
-1. Buka **https://signup.cloud.oracle.com** (atau `oracle.com/cloud/free` → *Start for free*).
-2. Pilih opsi **Tambah rincian pembayaran dan verifikasi** (kartu kredit/debit diperlukan Oracle untuk verifikasi; ada *authorization hold* 3–5 hari, **tidak ada charge**).
-3. Isi:
+> **Cara cepat:** jalankan dulu `scripts/signup-checklist.sh` di terminal.
+> Script ini menyiapkan data paling sering dilupa (email, nama, alamat, region, SSH key)
+> dan memandu kamu langkah per langkah sampai siap Terraform. Bagian OTP/kartu
+> tetap manual; data disimpan lokal di `~/.farm-oci-signup.env` (bukan ke repo).
+
+1. (Opsional tapi disarankan) Buka terminal di repo: `./scripts/signup-checklist.sh`.
+2. Buka **https://signup.cloud.oracle.com** (atau `oracle.com/cloud/free` → *Start for free*).
+3. Pilih opsi **Tambah rincian pembayaran dan verifikasi** (kartu kredit/debit diperlukan Oracle untuk verifikasi; ada *authorization hold* 3–5 hari, **tidak ada charge**).
+4. Isi:
    - Email aktif (Gmail disarankan) → verifikasi kode OTP.
    - Nomor HP → verifikasi OTP.
    - Nama lengkap sesuai kartu, alamat tagihan, negara.
    - **Country/Region**: *Singapore (Singapore) — ap-singapore-1*.
-4. Pilih **home region = Singapore**. ⚠️ *Home region tidak bisa diubah setelah daftar — pastikan Singapore benar-benar muncul saat signup.*
-5. Masukkan kartu → kirim → tunggu email aktivasi Oracle Cloud.
-6. Login ke **https://cloud.oracle.com** dan pastikan status akun: **Trial** atau **Always Free** aktif.
+5. Pilih **home region = Singapore**. ⚠️ *Home region tidak bisa diubah setelah daftar — pastikan Singapore benar-benar muncul saat signup.*
+6. Masukkan kartu → kirim → tunggu email aktivasi Oracle Cloud.
+7. Login ke **https://cloud.oracle.com** dan pastikan status akun: **Trial** atau **Always Free** aktif.
+8. Kembali ke terminal dan jawab pertanyaan checklist sesuai kondisi kamu (script akan lanjut ke fase PAYG).
 
 **Jika signup ditolak/tidak lolos verifikasi**
 - Tidak memakai kartu virtual/prepaid; pakai kartu kredit/debit reguler non-PIN.

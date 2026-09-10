@@ -19,9 +19,10 @@ farm-oci/
 ├── docs/
 │   └── RUNBOOK.md       # panduan signup, PAYG, dan langkah eksekusi detail
 ├── scripts/
-│   ├── setup-oci-cli.sh   # install OCI CLI + setup profile (manual-by-user)
-│   ├── oci-verify.sh      # verifikasi akun/region/kuota & kesehatan VPS
-│   └── keepalive.sh       # (opsional) cron keepalive anti-reclaim untuk VPS
+│   ├── signup-checklist.sh # checklist interaktif signup (manual, anti-lupa data)
+│   ├── setup-oci-cli.sh    # install OCI CLI + setup profile (manual-by-user)
+│   ├── oci-verify.sh       # verifikasi akun/region/kuota & kesehatan VPS
+│   └── keepalive.sh        # (opsional) cron keepalive anti-reclaim untuk VPS
 └── terraform/
     ├── main.tf          # VCN, subnet, A1 instance, budget, alarm
     ├── variables.tf
@@ -33,7 +34,7 @@ farm-oci/
 
 | Fase | Aksi | Dimana | Est. waktu |
 |---|---|---|---|
-| A1 | Signup akun + verifikasi kartu | browser: `signup.cloud.oracle.com` | 15–30 mnt |
+| A1 | Signup akun + verifikasi kartu | `scripts/signup-checklist.sh` → browser | 15–30 mnt |
 | A2 | Upgrade ke Pay As You Go | console OCI | 5–10 mnt |
 | A3 | Instal OCI CLI + buat API key (user baru) | mesin lokal | 10 mnt |
 | A4 | `terraform plan` + `terraform apply` | repo ini | 15–30 mnt |
